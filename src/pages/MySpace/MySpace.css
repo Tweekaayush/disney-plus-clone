@@ -1,0 +1,40 @@
+.my-space-header{
+    background-image: url("https://www.transparenttextures.com/patterns/stardust.png");
+    border-bottom: 1px solid;
+    border-image: linear-gradient(to right, var(--bg-color-1), var(--bg-color-3), var(--bg-color-1));
+    border-image-slice: 1;
+    padding: 64px 56px 64px 0;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+.my-space-header-2{
+    background-image: url("https://www.transparenttextures.com/patterns/stardust.png");
+    border-image-slice: 1;
+    padding: 112px 56px 0 0;
+    display: flex;
+    justify-content: center;
+}
+
+.my-space-header-2 img{
+    height: 150px;
+}
+
+.my-space-header-left span{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.my-space-header-left span svg{
+    color: var(--text-color-1);
+    font-size: var(--font-sz-4);
+}
+
+.my-space-header-right{
+    display: flex;
+    gap: 16px;
+}

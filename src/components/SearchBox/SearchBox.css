@@ -1,0 +1,32 @@
+.search-box-container{
+    display: flex;
+    align-items: center;
+    background-color: var(--bg-color-3);
+    border-radius: 5px;
+    padding: 0 20px;
+    color: var(--text-color-3);
+    margin-top: 32px;
+}
+
+.search-box-container svg{
+    font-size: 32px;
+}
+
+.search-box-container input{
+    flex: 1;
+    padding: 12px 24px 12px 20px;
+    background-color: transparent;
+    border: none;
+    font-size: var(--font-sz-4);
+    outline: none;
+    color: var(--text-color-1);
+    line-height: 32px;
+}
+
+.search-box-container input::placeholder{
+    color: var(--text-color-3);
+}
+
+.svg-active{
+    color: var(--text-color-1);
+}

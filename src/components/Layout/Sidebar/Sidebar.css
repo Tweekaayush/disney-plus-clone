@@ -1,0 +1,89 @@
+.navbar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    width: 96px;
+}
+
+.nav-brand{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    padding-block: 32px;
+}
+
+.nav-brand button{
+    padding: 8px;
+    border-radius: var(--font-sz-4);
+    background-color: var(--bg-color-2);
+    outline: none;
+    border: none;
+    color: var(--text-color-4);
+}
+
+.navbar-items-container{
+    position: relative;
+    width: 100%;
+    margin: auto;
+}
+
+.nav-items-list{
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-item{
+    transition: all 0.3s;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-color-3);
+    font-size: var(--font-sz-4);
+    cursor: pointer;
+}
+
+.nav-item-active{
+    color: var(--text-color-1);
+}
+
+.nav-item span:nth-child(1){
+    padding: 16px 12px;
+}
+
+.nav-item span:nth-child(2){
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-left: 72px;
+    text-wrap: nowrap;
+    padding: 16px 12px;
+    transition: inherit;
+    transform: translateX(-10px);
+    opacity: 0;
+    visibility: hidden;
+    width: 125px;
+}
+
+.nav-item:hover{
+    transform: scale(1.1);
+    color: var(--text-color-1);
+}
+
+.navbar-items-container:hover .nav-item span:nth-child(2){
+    visibility: visible;
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.user-icon{
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+}
