@@ -11,7 +11,7 @@ const MySpace = () => {
   const userName = useSelector(selectUserName)
 
   return (
-    <>
+    <div className='container-3'>
       <div className="container-2">
         {
           userName?(
@@ -20,7 +20,7 @@ const MySpace = () => {
               <div>
                 <span>
                   <h1 className='heading-text-1'>
-                    Subscribe to enjoy Disney+Hotstar
+                    Subscribe to enjoy Disney+ Hotstar
                   </h1>
                   <FaAngleRight/>
                   </span>
@@ -41,7 +41,7 @@ const MySpace = () => {
     <div className="container">
       <Profiles/>
     </div>
-    </>
+    </div>
   )
 }
 

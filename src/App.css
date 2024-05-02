@@ -17,17 +17,23 @@
   --bg-color-3: rgb(37, 40, 51);
   --bg-color-4: rgb(22, 24, 31);
   --bg-color-5: rgb(9, 22, 48);
+  --bg-color-6: rgb(26, 30, 38);
 
-  --overlay-color: rgba(0, 0, 0, .85);
+  --overlay-color: rgba(0, 0, 0, .8);
+  --overlay-color-2: rgba(0, 0, 0, 0);
+  --overlay-color-3: rgba(0, 0, 0, 0.5);
 /* 
   --button-color-1: */
   --button-color-1: rgb(52, 113, 245);
   --button-color-2: rgb(8, 65, 189);
+  --button-color-3: rgba(255, 255, 255, 0.2);;
+  --button-color-4: rgba(255, 255, 255, 0.3);;
 
   --text-color-1: rgb(255, 255, 255);
   --text-color-2: rgb(143, 152, 178);
   --text-color-3: rgba(255, 255, 255, 0.6);
   --text-color-4: rgb(255, 204, 117);
+  --text-color-5: rgba(255, 255, 255, 0.839);
 
   /* font */
 
@@ -97,9 +103,21 @@ ul{
   color: var(--text-color-2);
 }
 
+.body-text-3{
+  font-size: var(--font-sz-3);
+  color: var(--text-color-5);
+}
+
+.body-text-1,
+.body-text-2,
+.body-text-3,
+.body-text-4{
+  line-height: 28px;
+}
+
 .container{
   padding: 0 0 0 112px;
-  min-height: 100vh;
+  width: 100%;
 }
 
 .container-2{
@@ -107,12 +125,20 @@ ul{
   background-image: linear-gradient(to bottom, var(--bg-color-5), var(--bg-color-1));
 }
 
+.container-3{
+  width: 100%;
+  min-height: 100vh;
+}
+
 /* button styles */
+
+button{
+  border-radius: 5px;
+}
 
 .button-1{
   padding: 12px 64px;
   font-size: var(--font-sz-3);
-  border-radius: 5px;
   color: var(--text-color-1);
   border: none;
   cursor: pointer;
@@ -124,7 +150,6 @@ ul{
 .button-2{
   padding: 12px 64px;
   font-size: var(--font-sz-3);
-  border-radius: 5px;
   color: var(--text-color-1);
   border: none;
   cursor: pointer;
@@ -132,6 +157,26 @@ ul{
   background-color: var(--bg-color-2);
 }
 
-.button-1:hover, .button-2:hover{
+.button-3{
+  padding: 12px 64px;
+  font-size: var(--font-sz-3);
+  color: var(--text-color-1);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s;
+  background-color: var(--button-color-3); 
+}
+
+.button-4{
+  padding: 12px;
+  font-size: var(--font-sz-4);
+  color: var(--text-color-1);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s;
+  background-color: var(--button-color-3); 
+}
+
+.button-1:hover, .button-2:hover, .button-3:hover, .button-4:hover{
   transform: scale(1.05);
 }

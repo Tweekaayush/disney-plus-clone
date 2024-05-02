@@ -1,0 +1,34 @@
+.viewer-card-container{
+    border-radius: 5px;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    padding-top: 56.25%;
+}
+
+.viewer-card-container img{
+    display: block;
+    inset: 0px;
+    height: 100%;
+    position: absolute;
+    border-radius: 5px;
+    background-color: var(--bg-color-6);
+    object-fit: cover;
+}
+
+.viewer-card-container video{
+    top: 0;
+    left: 0;
+    width: 100%;
+    position: absolute;
+    border-radius: 5px;
+    z-index: -1;
+    opacity: 0;
+    transition: all 0.3s;
+    transition-delay: 0.3s;
+}
+
+.viewer-card-container:hover video{
+    z-index: 1;
+    opacity: 1;
+}

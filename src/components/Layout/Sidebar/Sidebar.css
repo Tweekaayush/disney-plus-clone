@@ -7,6 +7,24 @@
     flex-direction: column;
     height: 100vh;
     width: 96px;
+    z-index: 999;
+}
+
+.navbar-overlay{
+    background-image: linear-gradient(to right, var(--overlay-color), var(--overlay-color-2));
+    position: absolute;
+    height: 100vh;
+    width: 500px;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.3s;
+}
+
+.navbar-overlay-active{
+    visibility: visible;
+    opacity: 1;
 }
 
 .nav-brand{
@@ -16,6 +34,7 @@
     align-items: center;
     gap: 16px;
     padding-block: 32px;
+    cursor: pointer;
 }
 
 .nav-brand button{
@@ -25,6 +44,9 @@
     outline: none;
     border: none;
     color: var(--text-color-4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .navbar-items-container{

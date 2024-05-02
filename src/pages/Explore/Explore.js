@@ -3,7 +3,7 @@ import SearchBox from '../../components/SearchBox/SearchBox'
 
 const Explore = () => {
   return (
-    <div className="container">
+    <div className="container container-3">
         <SearchBox />
     </div>
   )

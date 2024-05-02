@@ -21,6 +21,9 @@ const Profiles = () => {
         }).catch((e)=> console.log(e.message))
     }
   }
+  const handleLogin = () =>{
+    document.getElementById('loginPg').classList.add('login-pg-active')
+  }
     
   return (
     <>
@@ -29,7 +32,7 @@ const Profiles = () => {
             <div className="profile-container">
                 <div className="profiles-header">
                     <h1 className='heading-text-1'>Profiles</h1>
-                    <button onClick={handleAuth}>
+                    <button onClick={handleAuth} className='button-2'>
                         <span>Logout</span>
                     </button>
                 </div>
@@ -58,7 +61,7 @@ const Profiles = () => {
             <div className="profile-container-2">
                 <h1 className="heading-text-1">Login to Disney+ Hotstar</h1>
                 <p className="body-text-2">Start Watching from where you left off, personalise for kids and more</p>
-                <button className='button-1'>Log In</button>
+                <button className='button-1' onClick={handleLogin}>Log In</button>
             </div>
         )
     }
