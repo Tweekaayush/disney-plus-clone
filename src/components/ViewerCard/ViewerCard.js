@@ -12,7 +12,7 @@ const ViewerCard = (props) => {
   return (
     <div className="viewer-card-container" onClick={handleClick}>
         <img src={props.img} alt={props.value} />
-        <video preload='auto' loop autoPlay='true' src={props.video}>
+        <video preload='auto' loop autoPlay={true} src={props.video}>
             <source type='video/mp4' src={props.video}/>
         </video>
     </div>

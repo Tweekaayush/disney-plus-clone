@@ -6,23 +6,21 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-const CardSlider = (props) => {
-
+const CardSlider = ({heading, shows}) => {
 
     const settings = {
-        infinite: true,
+        infinite: false,
         speed: 500,
         slidesToShow: 6,
         slidesToScroll: 6,
         arrows: false
-      };  
+    };  
 
-      const ref = useRef(null)
-
+    const ref = useRef(null)
   return (
     <div className="card-slider-container">
         <div className="card-slider-header">
-            <h1 className='heading-text-1'>{props.heading}</h1>
+            <h1 className='heading-text-1'>{heading}</h1>
             <div>
                 <p className='body-text-2'>View all</p>
                 <FaAngleRight />
@@ -32,12 +30,11 @@ const CardSlider = (props) => {
         <button onClick={()=>ref.current.slickPrev()}>
             <FaAngleLeft/>
         </button>
-
         <div className="card-slider-wrapper">
             <Slider {...settings} ref={ref}>
                 {
-                    props.shows.map((show, i)=>{
-                        return <Card1 key={i} {...show} />
+                    shows?.map((show)=>{
+                        return <Card1 key={show.id} {...show} />
                     })
                 }
             </Slider>

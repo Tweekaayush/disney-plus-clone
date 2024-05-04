@@ -44,6 +44,7 @@
     height: auto;
     position: relative;
     padding: 135% 0 0 0;
+    margin-bottom: 5px;
 }
 
 .card-container img{
@@ -59,7 +60,7 @@
     min-height: 100%;
     max-height: 100%;
     object-fit: cover;
-    border-radius: 10px;
+    border-radius: 5px;
 }
 
 
@@ -68,9 +69,8 @@
     height: 100%;
     padding-inline: 10px;
     z-index: 1;
-    background-color: var(--overlay-color-3);
     border: none;
-    color: var(--text-color-2);
+    color: var(--text-color-1);
     font-size: var(--font-sz-4);
     visibility: hidden;
     opacity: 0;
@@ -81,13 +81,13 @@
 .card-slider-tray button:first-child{
     top: 0;
     left: 0;
-    border-radius: 10px 0 0 10px;
+    background: linear-gradient(90deg, var(--bg-color-1) 0%, var(--overlay-color-2) 100%);
 }
 
 .card-slider-tray button:last-child{
     top: 0;
     right: 0;
-    border-radius: 0 10px 10px 0;
+    background: linear-gradient(270deg, var(--bg-color-1) 0%, var(--overlay-color-2) 100%);
 }
 
 .card-slider-container:hover .card-slider-header > div{

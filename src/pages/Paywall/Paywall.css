@@ -1,0 +1,5 @@
+.paywall-contaienr{
+    padding: 48px 56px 112px 56px;
+    display: flex;
+    flex-direction: column;
+}

@@ -1,11 +1,11 @@
 import React from 'react'
 
-const Card1 = ({src, srcset}) => {
+const Card1 = ({cardImg, cardImgSet}) => {
   return (
     <div className='card-container'>
         <img 
-          src={src} 
-          srcset={srcset}
+          src={cardImg} 
+          srcSet={cardImgSet}
         />
     </div>
   )

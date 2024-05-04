@@ -1,71 +1,36 @@
 import React, { useEffect } from 'react'
 import Hero from '../../components/Hero/Hero'
 import CardSlider from '../../components/CardSlider/CardSlider'
+import { selectMovieMarvel, selectMovieDisney, selectMoviePixar, selectMovieRecommend, selectMoviePopular } from '../../features/movie/movieSlice'
+import { useDispatch, useSelector } from 'react-redux'
+import { selectUserName } from '../../features/user/userSlice'
+import { getMovies } from '../../config/module'
+
 
 
 const Movies = () => {
-  const shows = [
-    {
-        src: "https://img10.hotstar.com/image/upload/f_auto,q_90,w_3840/sources/r1/cms/prod/5168/875168-v",
-        srcset: "https://img10.hotstar.com/image/upload/f_auto,q_90,w_128/sources/r1/cms/prod/5168/875168-v 128w, https://img10.hotstar.com/image/upload/f_auto,q_90,w_256/sources/r1/cms/prod/5168/875168-v 256w, https://img10.hotstar.com/image/upload/f_auto,q_90,w_384/sources/r1/cms/prod/5168/875168-v 384w, https://img10.hotstar.com/image/upload/f_auto,q_90,w_640/sources/r1/cms/prod/5168/875168-v 640w, https://img10.hotstar.com/image/upload/f_auto,q_90,w_750/sources/r1/cms/prod/5168/875168-v 750w, https://img10.hotstar.com/image/upload/f_auto,q_90,w_828/sources/r1/cms/prod/5168/875168-v 828w, https://img10.hotstar.com/image/upload/f_auto,q_90,w_1080/sources/r1/cms/prod/5168/875168-v 1080w, https://img10.hotstar.com/image/upload/f_auto,q_90,w_1200/sources/r1/cms/prod/5168/875168-v 1200w, https://img10.hotstar.com/image/upload/f_auto,q_90,w_1920/sources/r1/cms/prod/5168/875168-v 1920w, https://img10.hotstar.com/image/upload/f_auto,q_90,w_2048/sources/r1/cms/prod/5168/875168-v 2048w, https://img10.hotstar.com/image/upload/f_auto,q_90,w_3840/sources/r1/cms/prod/5168/875168-v 3840w"
-    },
-    {
-        src: "https://img10.hotstar.com/image/upload/f_auto,q_90,w_3840/sources/r1/cms/prod/5168/875168-v",
-        srcset: "https://img10.hotstar.com/image/upload/f_auto,q_90,w_128/sources/r1/cms/prod/5168/875168-v 128w, https://img10.hotstar.com/image/upload/f_auto,q_90,w_256/sources/r1/cms/prod/5168/875168-v 256w, https://img10.hotstar.com/image/upload/f_auto,q_90,w_384/sources/r1/cms/prod/5168/875168-v 384w, https://img10.hotstar.com/image/upload/f_auto,q_90,w_640/sources/r1/cms/prod/5168/875168-v 640w, https://img10.hotstar.com/image/upload/f_auto,q_90,w_750/sources/r1/cms/prod/5168/875168-v 750w, https://img10.hotstar.com/image/upload/f_auto,q_90,w_828/sources/r1/cms/prod/5168/875168-v 828w, https://img10.hotstar.com/image/upload/f_auto,q_90,w_1080/sources/r1/cms/prod/5168/875168-v 1080w, https://img10.hotstar.com/image/upload/f_auto,q_90,w_1200/sources/r1/cms/prod/5168/875168-v 1200w, https://img10.hotstar.com/image/upload/f_auto,q_90,w_1920/sources/r1/cms/prod/5168/875168-v 1920w, https://img10.hotstar.com/image/upload/f_auto,q_90,w_2048/sources/r1/cms/prod/5168/875168-v 2048w, https://img10.hotstar.com/image/upload/f_auto,q_90,w_3840/sources/r1/cms/prod/5168/875168-v 3840w"
-    },
-    {
-        src: "https://img10.hotstar.com/image/upload/f_auto,q_90,w_3840/sources/r1/cms/prod/5168/875168-v",
-        srcset: "https://img10.hotstar.com/image/upload/f_auto,q_90,w_128/sources/r1/cms/prod/5168/875168-v 128w, https://img10.hotstar.com/image/upload/f_auto,q_90,w_256/sources/r1/cms/prod/5168/875168-v 256w, https://img10.hotstar.com/image/upload/f_auto,q_90,w_384/sources/r1/cms/prod/5168/875168-v 384w, https://img10.hotstar.com/image/upload/f_auto,q_90,w_640/sources/r1/cms/prod/5168/875168-v 640w, https://img10.hotstar.com/image/upload/f_auto,q_90,w_750/sources/r1/cms/prod/5168/875168-v 750w, https://img10.hotstar.com/image/upload/f_auto,q_90,w_828/sources/r1/cms/prod/5168/875168-v 828w, https://img10.hotstar.com/image/upload/f_auto,q_90,w_1080/sources/r1/cms/prod/5168/875168-v 1080w, https://img10.hotstar.com/image/upload/f_auto,q_90,w_1200/sources/r1/cms/prod/5168/875168-v 1200w, https://img10.hotstar.com/image/upload/f_auto,q_90,w_1920/sources/r1/cms/prod/5168/875168-v 1920w, https://img10.hotstar.com/image/upload/f_auto,q_90,w_2048/sources/r1/cms/prod/5168/875168-v 2048w, https://img10.hotstar.com/image/upload/f_auto,q_90,w_3840/sources/r1/cms/prod/5168/875168-v 3840w"
-    },
-    {
-        src: "https://img10.hotstar.com/image/upload/f_auto,q_90,w_3840/sources/r1/cms/prod/5168/875168-v",
-        srcset: "https://img10.hotstar.com/image/upload/f_auto,q_90,w_128/sources/r1/cms/prod/5168/875168-v 128w, https://img10.hotstar.com/image/upload/f_auto,q_90,w_256/sources/r1/cms/prod/5168/875168-v 256w, https://img10.hotstar.com/image/upload/f_auto,q_90,w_384/sources/r1/cms/prod/5168/875168-v 384w, https://img10.hotstar.com/image/upload/f_auto,q_90,w_640/sources/r1/cms/prod/5168/875168-v 640w, https://img10.hotstar.com/image/upload/f_auto,q_90,w_750/sources/r1/cms/prod/5168/875168-v 750w, https://img10.hotstar.com/image/upload/f_auto,q_90,w_828/sources/r1/cms/prod/5168/875168-v 828w, https://img10.hotstar.com/image/upload/f_auto,q_90,w_1080/sources/r1/cms/prod/5168/875168-v 1080w, https://img10.hotstar.com/image/upload/f_auto,q_90,w_1200/sources/r1/cms/prod/5168/875168-v 1200w, https://img10.hotstar.com/image/upload/f_auto,q_90,w_1920/sources/r1/cms/prod/5168/875168-v 1920w, https://img10.hotstar.com/image/upload/f_auto,q_90,w_2048/sources/r1/cms/prod/5168/875168-v 2048w, https://img10.hotstar.com/image/upload/f_auto,q_90,w_3840/sources/r1/cms/prod/5168/875168-v 3840w"
-    },
-    {
-        src: "https://img10.hotstar.com/image/upload/f_auto,q_90,w_3840/sources/r1/cms/prod/5168/875168-v",
-        srcset: "https://img10.hotstar.com/image/upload/f_auto,q_90,w_128/sources/r1/cms/prod/5168/875168-v 128w, https://img10.hotstar.com/image/upload/f_auto,q_90,w_256/sources/r1/cms/prod/5168/875168-v 256w, https://img10.hotstar.com/image/upload/f_auto,q_90,w_384/sources/r1/cms/prod/5168/875168-v 384w, https://img10.hotstar.com/image/upload/f_auto,q_90,w_640/sources/r1/cms/prod/5168/875168-v 640w, https://img10.hotstar.com/image/upload/f_auto,q_90,w_750/sources/r1/cms/prod/5168/875168-v 750w, https://img10.hotstar.com/image/upload/f_auto,q_90,w_828/sources/r1/cms/prod/5168/875168-v 828w, https://img10.hotstar.com/image/upload/f_auto,q_90,w_1080/sources/r1/cms/prod/5168/875168-v 1080w, https://img10.hotstar.com/image/upload/f_auto,q_90,w_1200/sources/r1/cms/prod/5168/875168-v 1200w, https://img10.hotstar.com/image/upload/f_auto,q_90,w_1920/sources/r1/cms/prod/5168/875168-v 1920w, https://img10.hotstar.com/image/upload/f_auto,q_90,w_2048/sources/r1/cms/prod/5168/875168-v 2048w, https://img10.hotstar.com/image/upload/f_auto,q_90,w_3840/sources/r1/cms/prod/5168/875168-v 3840w"
-    },
-    {
-        src: "https://img10.hotstar.com/image/upload/f_auto,q_90,w_3840/sources/r1/cms/prod/5168/875168-v",
-        srcset: "https://img10.hotstar.com/image/upload/f_auto,q_90,w_128/sources/r1/cms/prod/5168/875168-v 128w, https://img10.hotstar.com/image/upload/f_auto,q_90,w_256/sources/r1/cms/prod/5168/875168-v 256w, https://img10.hotstar.com/image/upload/f_auto,q_90,w_384/sources/r1/cms/prod/5168/875168-v 384w, https://img10.hotstar.com/image/upload/f_auto,q_90,w_640/sources/r1/cms/prod/5168/875168-v 640w, https://img10.hotstar.com/image/upload/f_auto,q_90,w_750/sources/r1/cms/prod/5168/875168-v 750w, https://img10.hotstar.com/image/upload/f_auto,q_90,w_828/sources/r1/cms/prod/5168/875168-v 828w, https://img10.hotstar.com/image/upload/f_auto,q_90,w_1080/sources/r1/cms/prod/5168/875168-v 1080w, https://img10.hotstar.com/image/upload/f_auto,q_90,w_1200/sources/r1/cms/prod/5168/875168-v 1200w, https://img10.hotstar.com/image/upload/f_auto,q_90,w_1920/sources/r1/cms/prod/5168/875168-v 1920w, https://img10.hotstar.com/image/upload/f_auto,q_90,w_2048/sources/r1/cms/prod/5168/875168-v 2048w, https://img10.hotstar.com/image/upload/f_auto,q_90,w_3840/sources/r1/cms/prod/5168/875168-v 3840w"
-    },
-    {
-        src: "https://img10.hotstar.com/image/upload/f_auto,q_90,w_3840/sources/r1/cms/prod/5168/875168-v",
-        srcset: "https://img10.hotstar.com/image/upload/f_auto,q_90,w_128/sources/r1/cms/prod/5168/875168-v 128w, https://img10.hotstar.com/image/upload/f_auto,q_90,w_256/sources/r1/cms/prod/5168/875168-v 256w, https://img10.hotstar.com/image/upload/f_auto,q_90,w_384/sources/r1/cms/prod/5168/875168-v 384w, https://img10.hotstar.com/image/upload/f_auto,q_90,w_640/sources/r1/cms/prod/5168/875168-v 640w, https://img10.hotstar.com/image/upload/f_auto,q_90,w_750/sources/r1/cms/prod/5168/875168-v 750w, https://img10.hotstar.com/image/upload/f_auto,q_90,w_828/sources/r1/cms/prod/5168/875168-v 828w, https://img10.hotstar.com/image/upload/f_auto,q_90,w_1080/sources/r1/cms/prod/5168/875168-v 1080w, https://img10.hotstar.com/image/upload/f_auto,q_90,w_1200/sources/r1/cms/prod/5168/875168-v 1200w, https://img10.hotstar.com/image/upload/f_auto,q_90,w_1920/sources/r1/cms/prod/5168/875168-v 1920w, https://img10.hotstar.com/image/upload/f_auto,q_90,w_2048/sources/r1/cms/prod/5168/875168-v 2048w, https://img10.hotstar.com/image/upload/f_auto,q_90,w_3840/sources/r1/cms/prod/5168/875168-v 3840w"
-    },
-    {
-        src: "https://img10.hotstar.com/image/upload/f_auto,q_90,w_3840/sources/r1/cms/prod/5168/875168-v",
-        srcset: "https://img10.hotstar.com/image/upload/f_auto,q_90,w_128/sources/r1/cms/prod/5168/875168-v 128w, https://img10.hotstar.com/image/upload/f_auto,q_90,w_256/sources/r1/cms/prod/5168/875168-v 256w, https://img10.hotstar.com/image/upload/f_auto,q_90,w_384/sources/r1/cms/prod/5168/875168-v 384w, https://img10.hotstar.com/image/upload/f_auto,q_90,w_640/sources/r1/cms/prod/5168/875168-v 640w, https://img10.hotstar.com/image/upload/f_auto,q_90,w_750/sources/r1/cms/prod/5168/875168-v 750w, https://img10.hotstar.com/image/upload/f_auto,q_90,w_828/sources/r1/cms/prod/5168/875168-v 828w, https://img10.hotstar.com/image/upload/f_auto,q_90,w_1080/sources/r1/cms/prod/5168/875168-v 1080w, https://img10.hotstar.com/image/upload/f_auto,q_90,w_1200/sources/r1/cms/prod/5168/875168-v 1200w, https://img10.hotstar.com/image/upload/f_auto,q_90,w_1920/sources/r1/cms/prod/5168/875168-v 1920w, https://img10.hotstar.com/image/upload/f_auto,q_90,w_2048/sources/r1/cms/prod/5168/875168-v 2048w, https://img10.hotstar.com/image/upload/f_auto,q_90,w_3840/sources/r1/cms/prod/5168/875168-v 3840w"
-    },
-    {
-        src: "https://img10.hotstar.com/image/upload/f_auto,q_90,w_3840/sources/r1/cms/prod/5168/875168-v",
-        srcset: "https://img10.hotstar.com/image/upload/f_auto,q_90,w_128/sources/r1/cms/prod/5168/875168-v 128w, https://img10.hotstar.com/image/upload/f_auto,q_90,w_256/sources/r1/cms/prod/5168/875168-v 256w, https://img10.hotstar.com/image/upload/f_auto,q_90,w_384/sources/r1/cms/prod/5168/875168-v 384w, https://img10.hotstar.com/image/upload/f_auto,q_90,w_640/sources/r1/cms/prod/5168/875168-v 640w, https://img10.hotstar.com/image/upload/f_auto,q_90,w_750/sources/r1/cms/prod/5168/875168-v 750w, https://img10.hotstar.com/image/upload/f_auto,q_90,w_828/sources/r1/cms/prod/5168/875168-v 828w, https://img10.hotstar.com/image/upload/f_auto,q_90,w_1080/sources/r1/cms/prod/5168/875168-v 1080w, https://img10.hotstar.com/image/upload/f_auto,q_90,w_1200/sources/r1/cms/prod/5168/875168-v 1200w, https://img10.hotstar.com/image/upload/f_auto,q_90,w_1920/sources/r1/cms/prod/5168/875168-v 1920w, https://img10.hotstar.com/image/upload/f_auto,q_90,w_2048/sources/r1/cms/prod/5168/875168-v 2048w, https://img10.hotstar.com/image/upload/f_auto,q_90,w_3840/sources/r1/cms/prod/5168/875168-v 3840w"
-    },
-    {
-        src: "https://img10.hotstar.com/image/upload/f_auto,q_90,w_3840/sources/r1/cms/prod/5168/875168-v",
-        srcset: "https://img10.hotstar.com/image/upload/f_auto,q_90,w_128/sources/r1/cms/prod/5168/875168-v 128w, https://img10.hotstar.com/image/upload/f_auto,q_90,w_256/sources/r1/cms/prod/5168/875168-v 256w, https://img10.hotstar.com/image/upload/f_auto,q_90,w_384/sources/r1/cms/prod/5168/875168-v 384w, https://img10.hotstar.com/image/upload/f_auto,q_90,w_640/sources/r1/cms/prod/5168/875168-v 640w, https://img10.hotstar.com/image/upload/f_auto,q_90,w_750/sources/r1/cms/prod/5168/875168-v 750w, https://img10.hotstar.com/image/upload/f_auto,q_90,w_828/sources/r1/cms/prod/5168/875168-v 828w, https://img10.hotstar.com/image/upload/f_auto,q_90,w_1080/sources/r1/cms/prod/5168/875168-v 1080w, https://img10.hotstar.com/image/upload/f_auto,q_90,w_1200/sources/r1/cms/prod/5168/875168-v 1200w, https://img10.hotstar.com/image/upload/f_auto,q_90,w_1920/sources/r1/cms/prod/5168/875168-v 1920w, https://img10.hotstar.com/image/upload/f_auto,q_90,w_2048/sources/r1/cms/prod/5168/875168-v 2048w, https://img10.hotstar.com/image/upload/f_auto,q_90,w_3840/sources/r1/cms/prod/5168/875168-v 3840w"
-    },
-    {
-        src: "https://img10.hotstar.com/image/upload/f_auto,q_90,w_3840/sources/r1/cms/prod/5168/875168-v",
-        srcset: "https://img10.hotstar.com/image/upload/f_auto,q_90,w_128/sources/r1/cms/prod/5168/875168-v 128w, https://img10.hotstar.com/image/upload/f_auto,q_90,w_256/sources/r1/cms/prod/5168/875168-v 256w, https://img10.hotstar.com/image/upload/f_auto,q_90,w_384/sources/r1/cms/prod/5168/875168-v 384w, https://img10.hotstar.com/image/upload/f_auto,q_90,w_640/sources/r1/cms/prod/5168/875168-v 640w, https://img10.hotstar.com/image/upload/f_auto,q_90,w_750/sources/r1/cms/prod/5168/875168-v 750w, https://img10.hotstar.com/image/upload/f_auto,q_90,w_828/sources/r1/cms/prod/5168/875168-v 828w, https://img10.hotstar.com/image/upload/f_auto,q_90,w_1080/sources/r1/cms/prod/5168/875168-v 1080w, https://img10.hotstar.com/image/upload/f_auto,q_90,w_1200/sources/r1/cms/prod/5168/875168-v 1200w, https://img10.hotstar.com/image/upload/f_auto,q_90,w_1920/sources/r1/cms/prod/5168/875168-v 1920w, https://img10.hotstar.com/image/upload/f_auto,q_90,w_2048/sources/r1/cms/prod/5168/875168-v 2048w, https://img10.hotstar.com/image/upload/f_auto,q_90,w_3840/sources/r1/cms/prod/5168/875168-v 3840w"
-    },
-    {
-        src: "https://img10.hotstar.com/image/upload/f_auto,q_90,w_3840/sources/r1/cms/prod/5168/875168-v",
-        srcset: "https://img10.hotstar.com/image/upload/f_auto,q_90,w_128/sources/r1/cms/prod/5168/875168-v 128w, https://img10.hotstar.com/image/upload/f_auto,q_90,w_256/sources/r1/cms/prod/5168/875168-v 256w, https://img10.hotstar.com/image/upload/f_auto,q_90,w_384/sources/r1/cms/prod/5168/875168-v 384w, https://img10.hotstar.com/image/upload/f_auto,q_90,w_640/sources/r1/cms/prod/5168/875168-v 640w, https://img10.hotstar.com/image/upload/f_auto,q_90,w_750/sources/r1/cms/prod/5168/875168-v 750w, https://img10.hotstar.com/image/upload/f_auto,q_90,w_828/sources/r1/cms/prod/5168/875168-v 828w, https://img10.hotstar.com/image/upload/f_auto,q_90,w_1080/sources/r1/cms/prod/5168/875168-v 1080w, https://img10.hotstar.com/image/upload/f_auto,q_90,w_1200/sources/r1/cms/prod/5168/875168-v 1200w, https://img10.hotstar.com/image/upload/f_auto,q_90,w_1920/sources/r1/cms/prod/5168/875168-v 1920w, https://img10.hotstar.com/image/upload/f_auto,q_90,w_2048/sources/r1/cms/prod/5168/875168-v 2048w, https://img10.hotstar.com/image/upload/f_auto,q_90,w_3840/sources/r1/cms/prod/5168/875168-v 3840w"
-    },
-  ]
 
+  const dispatch = useDispatch()
+  const userName = useSelector(selectUserName)
+  const recommendMovies = useSelector(selectMovieRecommend)
+  const disneyMovies = useSelector(selectMovieDisney)
+  const pixarMovies = useSelector(selectMoviePixar) 
+  const marvelMovies = useSelector(selectMovieMarvel) 
+  const popularMovies = useSelector(selectMoviePopular) 
+  
   useEffect(()=>{
     window.scrollTo(0, 0)
-  }, [])
+    getMovies(dispatch)
+  }, [userName])
 
   return (
     <div className='container-3'>
-      <Hero/>
+      <Hero recommend={recommendMovies} contentType='movie'/>
       <div className="container">
-        <CardSlider heading='Popular' shows={shows}/>
-        <CardSlider heading='Upcoming' shows={shows}/>
-        <CardSlider heading='New Release' shows={shows}/>
+        <CardSlider heading='Popular Movies' shows={popularMovies}/>
+        <CardSlider heading='Disney Movies' shows={disneyMovies}/>
+        <CardSlider heading='Pixar Movies' shows={pixarMovies}/>
+        <CardSlider heading='Marvel Movies' shows={marvelMovies}/>
       </div>
     </div>
   )
