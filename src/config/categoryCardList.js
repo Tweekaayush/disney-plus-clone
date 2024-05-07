@@ -9,31 +9,37 @@ export const categoryCard = [
     {
         name: 'disney',
         img: disney,
-        video: 'https://img10.hotstar.com/video/upload/sources/r1/cms/animations/qh3yh_1587393133132'
+        video: 'https://img10.hotstar.com/video/upload/sources/r1/cms/animations/qh3yh_1587393133132',
+        studio: 'disney'
     },
     {
         name: 'pixar',
         img: pixar,
-        video: 'https://img10.hotstar.com/video/upload/sources/r1/cms/animations/a6lr0r_1587393331483'
+        video: 'https://img10.hotstar.com/video/upload/sources/r1/cms/animations/a6lr0r_1587393331483',
+        studio: 'pixar'
     },
     {
         name: 'marvel',
         img: marvel,
-        video: 'https://img10.hotstar.com/video/upload/sources/r1/cms/animations/1on5cf_1587393232549'
+        video: 'https://img10.hotstar.com/video/upload/sources/r1/cms/animations/1on5cf_1587393232549',
+        studio: 'marvel'
     },
     {
         name: 'starwars',
         img: starwars,
-        video: 'https://img10.hotstar.com/video/upload/sources/r1/cms/animations/utwmfd_1587393376512'
+        video: 'https://img10.hotstar.com/video/upload/sources/r1/cms/animations/utwmfd_1587393376512',
+        studio: 'starwars'
     },
     {
         name: 'nationalgeographic',
         img: national,
-        video: 'https://img10.hotstar.com/video/upload/sources/r1/cms/animations/ojerhm_1587393280208'
+        video: 'https://img10.hotstar.com/video/upload/sources/r1/cms/animations/ojerhm_1587393280208',
+        studio: 'natgeo'
     },
     {
         name: 'hotstarspecials',
         img: hotstar,
-        video: 'https://img10.hotstar.com/video/upload/sources/r1/cms/animations/qc9clm_1669284974594'
+        video: 'https://img10.hotstar.com/video/upload/sources/r1/cms/animations/qc9clm_1669284974594',
+        studio: 'hs'
     },
 ]

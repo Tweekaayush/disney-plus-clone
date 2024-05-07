@@ -1,0 +1,12 @@
+.browse-header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 96px 32px 32px 32px;
+}
+
+.browse-header h1{
+    color: var(--text-color-1);
+    font-size: var(--font-sz-7);
+    text-transform: capitalize;
+}

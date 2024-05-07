@@ -7,7 +7,7 @@ const ViewerCard = (props) => {
   const navigate = useNavigate()
   
   const handleClick = () =>{
-    navigate('/')
+    navigate(`/studio/${props.studio}`)
   }
   return (
     <div className="viewer-card-container" onClick={handleClick}>

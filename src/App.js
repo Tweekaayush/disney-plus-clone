@@ -10,8 +10,10 @@ import Login from './components/Login/Login'
 import MySpace from './pages/MySpace/MySpace'
 import Categories from './pages/Categories/Categories'
 import Movies from './pages/Movies/Movies'
-import Sports from './pages/Sports/Sports'
 import Paywall from './pages/Paywall/Paywall'
+import ShowPage from './pages/ShowPage/ShowPage'
+import StudioPage from './pages/StudioPage/StudioPage'
+import Browse from './pages/Browse/Browse'
 
 const App = () => {
 
@@ -26,11 +28,13 @@ const App = () => {
         <Route exact path='/explore' element={<Explore />}/>
         <Route exact path='/shows' element={<Shows />}/>
         <Route exact path='/movies' element={<Movies />}/>
-        <Route exact path='/sports' element={<Sports />}/>
         <Route exact path='/categories' element={<Categories />}/>
         <Route exact path='/paywall' element={<Paywall />}/>
-        <Route exact path='/movies/:id' />
-        <Route exact path='/shows/:id' />
+        <Route exact path='/movies/:id' element={<ShowPage/>}/>
+        <Route exact path='/shows/:id' element={<ShowPage/>}/>
+        <Route exact path='/studio/:name' element={<StudioPage/>}/>
+        <Route exact path='/browse/category/:category/:type' element={<Browse/>}/>
+
       </Routes>
       <Footer />
     </Router>

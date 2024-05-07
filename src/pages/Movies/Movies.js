@@ -27,10 +27,10 @@ const Movies = () => {
     <div className='container-3'>
       <Hero recommend={recommendMovies} contentType='movie'/>
       <div className="container">
-        <CardSlider heading='Popular Movies' shows={popularMovies}/>
-        <CardSlider heading='Disney Movies' shows={disneyMovies}/>
-        <CardSlider heading='Pixar Movies' shows={pixarMovies}/>
-        <CardSlider heading='Marvel Movies' shows={marvelMovies}/>
+        <CardSlider heading='Popular Movies' shows={popularMovies} category={'popular'} contentType={'movies'}/>
+        <CardSlider heading='Disney Movies' shows={disneyMovies} category={'disney'} contentType={'movies'}/>
+        <CardSlider heading='Pixar Movies' shows={pixarMovies} category={'pixar'} contentType={'movies'}/>
+        <CardSlider heading='Marvel Movies' shows={marvelMovies} category={'marvel'} contentType={'movies'}/>
       </div>
     </div>
   )

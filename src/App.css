@@ -27,7 +27,8 @@
   --button-color-1: rgb(52, 113, 245);
   --button-color-2: rgb(8, 65, 189);
   --button-color-3: rgba(88, 89, 91, 0.5);
-  --button-color-4: rgba(255, 255, 255, 0.3);;
+  --button-color-4: rgba(255, 255, 255, 0.3);
+  --button-color-5: rgba(255, 255, 255, 0.35);
 
   --text-color-1: rgb(255, 255, 255);
   --text-color-2: rgb(143, 152, 178);
@@ -128,6 +129,8 @@ ul{
 .container-3{
   width: 100%;
   min-height: 100vh;
+  height: fit-content;
+  position: relative;
 }
 
 /* button styles */
@@ -159,7 +162,7 @@ button{
 
 .button-3{
   flex: 1;
-  padding: 14px;
+  padding: 20px;
   font-size: var(--font-sz-3);
   color: var(--text-color-1);
   border: none;
@@ -169,7 +172,7 @@ button{
 }
 
 .button-4{
-  padding: 14px;
+  padding: 20px;
   font-size: var(--font-sz-4);
   color: var(--text-color-1);
   border: none;
@@ -180,4 +183,8 @@ button{
 
 .button-1:hover, .button-2:hover, .button-3:hover, .button-4:hover{
   transform: scale(1.05);
+}
+
+.button-3:hover{
+  background-color: var(--button-color-5);
 }

@@ -1,14 +1,13 @@
 import React from 'react'
-import './Trending.css'
+import '../Trending/Trending.css'
 import Card1 from '../CardSlider/Card1'
 
-const Trending = ({shows}) => {
+const SearchResults = ({searchResults}) => {
   return (
     <div className="search-container">
-        <h1 className="heading-text-1">Trending in India</h1>
         <div className="show-wrapper">
             {
-                shows?.map((show, i)=>{
+                searchResults?.map((show, i)=>{
                     return <Card1 key={i} {...show}/>
                 })
             }
@@ -17,4 +16,4 @@ const Trending = ({shows}) => {
   )
 }
 
-export default Trending
+export default SearchResults

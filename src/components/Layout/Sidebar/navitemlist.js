@@ -26,11 +26,6 @@ export const navlist = [
         value: '/movies'
     },
     {
-        name: 'Sports',
-        icon: <BiTennisBall />,
-        value: '/sports'
-    },
-    {
         name: 'Categories',
         icon: <BiCategory />,
         value: '/categories'

@@ -1,12 +1,13 @@
-.trending-container{
+.search-container{
     display: flex;
     flex-direction: column;
     gap: 16px;
     padding-top: 64px;
 }
 
-.trending-wrapper{
+.show-wrapper{
     display: grid;
     grid-template-columns: repeat(7, minmax(0, 1fr));
     gap: 8px;
+    padding: 64px 32px 64px 0;
 }

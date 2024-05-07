@@ -1,5 +1,7 @@
 footer{
+    position: relative;
     width: 100%;
+    z-index: 997;
 }
 
 .footer-container{

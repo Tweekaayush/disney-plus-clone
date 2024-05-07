@@ -45,6 +45,7 @@
     position: relative;
     padding: 135% 0 0 0;
     margin-bottom: 5px;
+    cursor: pointer;
 }
 
 .card-container img{
@@ -102,4 +103,26 @@
 
 .card-slider-container .slick-slide{
     padding-right: 8px
+}
+
+.card-container-2{
+    border-radius: 5px;
+    text-transform: capitalize;
+    width: 100%;
+    height: auto;
+    position: relative;
+    padding: 56.5% 0 0 0;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+.card-2-container{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

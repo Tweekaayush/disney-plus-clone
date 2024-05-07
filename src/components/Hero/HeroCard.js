@@ -1,11 +1,27 @@
 import React, { useState } from 'react'
 import { FiPlus } from "react-icons/fi";
+import { useNavigate } from 'react-router-dom';
 
-const HeroCard = ({releaseYear, duration, languages, description, genres, title, backgroundImg, logo, rated}) => {
+const HeroCard = ({id, releaseYear, duration, languages, description, genres, title, backgroundImg, logo, rated}) => {
+
+    const navigate = useNavigate()
+
+    const handleClick = (e) =>{
+        e.stopPropagation();
+        if(duration)
+          navigate(`/movies/${id}`)
+        else
+          navigate(`/shows/${id}`)
+      }
+
+      const goToSubscribePage = (e) =>{
+        e.stopPropagation()
+        navigate('/myspace')
+      }
 
   return (
-    <div className="hero-wrapper">
-        <div className="hero-image">
+    <div className="hero-wrapper" onClick={handleClick}>
+        <div className="hero-image" >
             <div className="hero-image-overlay"></div>
             <img src={backgroundImg} alt={title}/>
         </div>
@@ -48,7 +64,7 @@ const HeroCard = ({releaseYear, duration, languages, description, genres, title,
                     }
                 </ul>
                 <div className="hero-buttons">
-                    <button className='button-3'>Subscribe to watch</button>
+                    <button className='button-3' onClick={goToSubscribePage}>Subscribe to watch</button>
                     <button className='button-4'>
                         <FiPlus/>
                     </button>
