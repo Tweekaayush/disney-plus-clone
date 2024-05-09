@@ -23,7 +23,7 @@ const Login = () => {
     dispatch(setUserLoginDetails({
       name: user.displayName,
       email: user.email,
-      photo: user.photoURL,
+      photo: 'https://img1.hotstarext.com/image/upload/w_200,h_200,c_fill/v1/feature/profile/38.png',
     }))
   }
 
@@ -63,13 +63,13 @@ const Login = () => {
           <form action="">
             <div className="form-input">
               <span className='country-code'>+91</span>
-              <input type="number" name="" id="" placeholder='Enter mobile number'/>
+              <input type="number" name="" id="" placeholder='Enter mobile number' disabled/>
             </div>
             <span className="error-msg"></span>
             <p className='body-text-2'>By proceeding you confirm that you are above 18 years of age and agree to the Privacy policy & Terms of use</p>
           </form>
           <div className="separator"></div>
-          <button onClick={handleAuth}>
+          <button onClick={handleAuth} style={{cursor: 'pointer'}}>
             <img className="google-img" src={logo}></img>
             <span>Continue with Google</span>
           </button>

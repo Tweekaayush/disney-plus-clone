@@ -1,0 +1,78 @@
+.paywall-nav{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: var(--bg-color-1);
+}
+
+.paywall-nav-left{
+    display: flex;
+    align-items: flex-end;
+    gap: 32px;
+}
+
+.paywall-nav-left svg{
+    color: var(--text-color-1);
+    font-size: var(--font-sz-8);
+    cursor: pointer;
+}
+
+.paywall-nav-left img{
+    height: auto;
+}
+
+.paywall-nav-right{
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    align-items: center;
+}
+
+.select-menu{
+    position: relative;
+    background-color: var(--button-color-3);
+    color: var(--text-color-1);
+    text-transform: capitalize;
+    font-size: var(--font-sz-3);
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.select-display{
+    height: 100%;
+    width: 100%;
+    padding: 12px 64px;
+}
+
+.select-list{
+    position: absolute;
+    top: calc(27px + var(--font-sz-3));
+    left: 0;
+    width: 100%;
+    max-height: 0;
+    background-color: var(--button-color-3);
+    overflow: hidden;
+    border-radius: 0 0 5px 5px;
+}
+
+.select-list div{
+    padding: 0 64px;
+}
+
+.select-list-active{
+    border-radius: 5px 5px 0 0;
+}
+
+.select-list-active .select-list{
+    max-height: 300px;
+}
+
+.select-list-active .select-list div{
+    padding: 12px 64px;
+}

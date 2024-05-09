@@ -25,8 +25,10 @@ const Browse = () => {
   useEffect(()=>{
     if(type === 'movies')
       getShowsByGenre(allMovies, category, dispatch, type)
-  else
+    else if(type === 'shows')
       getShowsByGenre(allShows, category, dispatch, type)
+    else
+      getShowsByGenre(allMovies, category, dispatch)
   }, [allMovies, allShows, category, dispatch, type])
 
   return (

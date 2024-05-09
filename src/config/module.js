@@ -228,7 +228,7 @@ export const getStudioImages = (setBgImg, setBgLogo, name) =>{
   }
 }
 
-export const getShowsByGenre = (shows, genre, dispatch, title) =>{
+export const getShowsByGenre = (shows, genre, dispatch, title='') =>{
 
   let genreList = []
 

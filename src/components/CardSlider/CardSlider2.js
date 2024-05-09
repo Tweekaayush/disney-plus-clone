@@ -18,11 +18,16 @@ const CardSlider2 = ({heading, list}) => {
         arrows: false
     };  
   const ref = useRef(null)
+
+  const handleClick = () =>{
+    navigate(`/browse/editorial/popular-genres`)
+  }
+
   return (
     <div className="card-slider-container">
         <div className="card-slider-header">
             <h1 className='heading-text-1'>{heading}</h1>
-            <div>
+            <div onClick={handleClick}>
                 <p className='body-text-2'>View all</p>
                 <FaAngleRight />
             </div>

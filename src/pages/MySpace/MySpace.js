@@ -4,11 +4,13 @@ import './MySpace.css'
 import { useSelector } from 'react-redux'
 import { selectUserName } from '../../features/user/userSlice'
 import { FaAngleRight } from "react-icons/fa";
+import { useNavigate } from 'react-router-dom'
 
 
 const MySpace = () => {
 
   const userName = useSelector(selectUserName)
+  const navigate = useNavigate()
 
   useEffect(()=>{
     window.scrollTo(0, 0)
@@ -31,7 +33,7 @@ const MySpace = () => {
               </div>
             </div>
             <div className="my-space-header-right">
-                <button className='button-1'>Subscribe</button>
+                <button className='button-1' onClick={()=>navigate('/paywall')}>Subscribe</button>
                 <button className='button-2'>Help & Settings</button>
             </div>
           </div>

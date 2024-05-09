@@ -74,6 +74,13 @@
     list-style: none;
 }
 
+.hero-details-item span{
+    background-color: var(--button-color-4);
+    padding: 1px 12px;
+    text-transform: uppercase;
+    border-radius: 5px;
+}
+
 .hero-genre-item{
     margin-right: 8px;
     padding-right: 8px;

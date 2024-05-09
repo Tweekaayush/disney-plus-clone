@@ -20,12 +20,15 @@
     visibility: hidden;
     opacity: 0;
     transition: all 0.3s;
-    border-bottom: 2px solid var(--text-color-2);
     line-height: 1;
 }
 
 .card-slider-header > div svg{
     color: var(--text-color-2);
+}
+
+.card-slider-header > div:hover p, .card-slider-header >div:hover svg{
+    color: var(--text-color-1);
 }
 
 .card-slider-tray{

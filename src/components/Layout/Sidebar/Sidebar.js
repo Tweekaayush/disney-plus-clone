@@ -19,10 +19,14 @@ const Sidebar = () => {
     navigate(loc)
    }
 
+   const handleSubscribe = () =>{
+    navigate('/paywall')
+   }
+
   return (
     <nav className='navbar'>
         <div className={`navbar-overlay ${cls}`}></div>
-        <div className="nav-brand">
+        <div className="nav-brand" onClick={handleSubscribe}>
             <img src="https://img.hotstar.com/image/upload/v1656431456/web-images/logo-d-plus.svg" alt=""/>
             <button>
                 <span>

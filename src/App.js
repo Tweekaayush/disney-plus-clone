@@ -14,6 +14,7 @@ import Paywall from './pages/Paywall/Paywall'
 import ShowPage from './pages/ShowPage/ShowPage'
 import StudioPage from './pages/StudioPage/StudioPage'
 import Browse from './pages/Browse/Browse'
+import BrowseEditorial from './pages/Browse/BrowseEditorial'
 
 const App = () => {
 
@@ -34,7 +35,8 @@ const App = () => {
         <Route exact path='/shows/:id' element={<ShowPage/>}/>
         <Route exact path='/studio/:name' element={<StudioPage/>}/>
         <Route exact path='/browse/category/:category/:type' element={<Browse/>}/>
-
+        <Route exact path='/browse/category/:category' element={<Browse/>}/>
+        <Route exact path='/browse/editorial/:type' element={<BrowseEditorial/>}/>
       </Routes>
       <Footer />
     </Router>
