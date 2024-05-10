@@ -23,7 +23,7 @@ const HeroCard = ({id, releaseYear, duration, languages, description, genres, ti
     <div className="hero-wrapper" onClick={handleClick}>
         <div className="hero-image" >
             <div className="hero-image-overlay"></div>
-            <img src={backgroundImg} alt={title}/>
+            <img src={backgroundImg} alt={title} loading='lazy'/>
         </div>
         <div className="hero-content">
             <div>

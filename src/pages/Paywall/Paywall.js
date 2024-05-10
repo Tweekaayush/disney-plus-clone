@@ -98,7 +98,12 @@ const Paywall = () => {
               {
                 [...movies, ...shows]?.splice(0, 35).map((card, i)=>{
                   return <div className='paywall-loop-img'>
-                          <img key={i} src={card.cardImg} alt="" />
+                          <img 
+                            key={i} 
+                            src={card.cardImg} 
+                            alt="" 
+                            loading='lazy' 
+                          />
                         </div>
                 })
               }

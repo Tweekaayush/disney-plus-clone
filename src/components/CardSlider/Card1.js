@@ -17,6 +17,7 @@ const Card1 = ({cardImg, cardImgSet, id, duration}) => {
         <img 
           src={cardImg} 
           srcSet={cardImgSet}
+          loading='lazy'
         />
     </div>
   )

@@ -37,12 +37,14 @@ const StudioPage = () => {
           <img 
             src={bgImg} 
             alt={name} 
+            loading='lazy'
           />
         </div>
         <div className="studio-bg-logo">
           <img 
             src={bgLogo} 
             alt={name} 
+            loading='lazy'
           />
         </div>
       </div>
