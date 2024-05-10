@@ -18,10 +18,12 @@
   --bg-color-4: rgb(22, 24, 31);
   --bg-color-5: rgb(9, 22, 48);
   --bg-color-6: rgb(26, 30, 38);
-
+  
   --overlay-color: rgba(0, 0, 0, .8);
   --overlay-color-2: rgba(0, 0, 0, 0);
   --overlay-color-3: rgba(0, 0, 0, 0.5);
+  --overlay-color-4: rgb(15, 16, 20, 0.5);
+  --overlay-color-5: rgb(15, 16, 20, 0.7);
 /* 
   --button-color-1: */
   --button-color-1: rgb(52, 113, 245);
