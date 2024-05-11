@@ -84,7 +84,7 @@ const Paywall = () => {
     getShows(dispatch)
     getMovies(dispatch)
     window.scrollTo(0, 0)
-  }, [])
+  }, [dispatch])
   return (
     <div className="paywall-container">
         <PaywallNav/>
@@ -101,8 +101,8 @@ const Paywall = () => {
                           <img 
                             key={i} 
                             src={card.cardImg} 
-                            alt="" 
-                            loading='lazy' 
+                            srcSet={card.cardImgSet}
+                            sizes="(-webkit-min-device-pixel-ratio: 2) 12.75vw, (-moz-device-pixel-ratio: 2) 12.75vw, (-webkit-min-device-pixel-ratio: 1) 17vw,(-moz-device-pixel-ratio: 1) 17vw"
                           />
                         </div>
                 })

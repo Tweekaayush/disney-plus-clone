@@ -51,7 +51,7 @@ const PaywallTable = ({id}) => {
                 </div>
                 {
                     pricing?.map((e, i)=>{
-                        return  <div className="table-col">
+                        return  <div key={i} className="table-col">
                                     <div className="table-head">
                                         <span className='table-text'>{e.value}</span>
                                     </div>

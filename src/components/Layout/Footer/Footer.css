@@ -76,8 +76,12 @@ footer{
 
 @media screen and (max-width: 768px) {
 
-    .upper-footer{
+    .upper-footer, .lower-footer{
         flex-direction: column;
+    }
+
+    .lower-footer-left{
+        order: 1;
     }
 
     .footer-list{

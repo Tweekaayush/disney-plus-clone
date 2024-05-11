@@ -2,15 +2,19 @@ import React, { useEffect } from 'react'
 import Profiles from '../../components/Profiles/Profiles'
 import './MySpace.css'
 import { useSelector } from 'react-redux'
-import { selectUserName } from '../../features/user/userSlice'
+import { selectUserName, selectWatchList } from '../../features/user/userSlice'
 import { FaAngleRight } from "react-icons/fa";
 import { useNavigate } from 'react-router-dom'
+import CardSlider from '../../components/CardSlider/CardSlider'
 
 
 const MySpace = () => {
 
   const userName = useSelector(selectUserName)
   const navigate = useNavigate()
+  const watchList = useSelector(selectWatchList)
+
+  console.log(watchList)
 
   useEffect(()=>{
     window.scrollTo(0, 0)
@@ -46,6 +50,9 @@ const MySpace = () => {
       </div>
     <div className="container">
       <Profiles/>
+      {
+      watchList.length && <CardSlider heading='Watchlist' shows={watchList} />
+      }
     </div>
     </div>
   )

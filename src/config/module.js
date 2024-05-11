@@ -225,6 +225,7 @@ export const getStudioImages = (setBgImg, setBgLogo, name) =>{
       setBgImg('https://img10.hotstar.com/image/upload/f_auto,q_90,w_3840/sources/r1/cms/prod/9415/1419415-i-bb1e21b96f75')
       setBgLogo('https://img10.hotstar.com/image/upload/f_auto,q_90,w_3840/sources/r1/cms/prod/9414/1419414-t-3299149a02eb')
       break;
+    default:
   }
 }
 
@@ -238,13 +239,13 @@ export const getShowsByGenre = (shows, genre, dispatch, title='') =>{
     })
   }
 
-  if(genreList.length == 0){ 
+  if(genreList.length === 0){ 
     genreList = shows.filter((show)=>{
       return show.studio === genre
     })
   }
 
-  if(genreList.length == 0){
+  if(genreList.length === 0){
     shows.forEach((show)=>{
       show.genres.forEach((genreName)=>{
         if(genreName === genre)

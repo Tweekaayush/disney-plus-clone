@@ -50,6 +50,11 @@ const CardSlider = ({heading, shows, category, contentType}) => {
                         return <Card1 key={show.id} {...show} />
                     })
                 }
+                {
+                    [1, 2, 3, 4, 5, 6, 7].splice(0, 7 - shows.length).map((show, i)=>{
+                        return <div></div>
+                    })
+                }
             </Slider>
         </div>
 

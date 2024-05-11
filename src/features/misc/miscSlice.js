@@ -6,7 +6,7 @@ const initialState = {
     studioShows: [],
     genreList: [],
     displayShow: [],
-    similarShows: []
+    similarShows: [],
 }
 
 const miscSlice = createSlice({

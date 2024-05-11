@@ -2,7 +2,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 96px 32px 32px 32px;
+    padding: 96px 32px;
 }
 
 .browse-header h1{

@@ -17,7 +17,7 @@ const Card1 = ({cardImg, cardImgSet, id, duration}) => {
         <img 
           src={cardImg} 
           srcSet={cardImgSet}
-          loading='lazy'
+          sizes="(-webkit-min-device-pixel-ratio: 2) 12.75vw, (-moz-device-pixel-ratio: 2) 12.75vw, (-webkit-min-device-pixel-ratio: 1) 17vw,(-moz-device-pixel-ratio: 1) 17vw"
         />
     </div>
   )

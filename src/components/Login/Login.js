@@ -1,9 +1,9 @@
 import React, { useEffect, useRef } from 'react'
 import './Login.css'
 import { useDispatch, useSelector } from 'react-redux'
-import { auth, provider, signInWithPopup, onAuthStateChanged } from '../../config/firebase'
+import db, { auth, provider, signInWithPopup, onAuthStateChanged, doc, getDoc, setDoc } from '../../config/firebase'
 import logo from '../../assets/images/logo/google.jpg'
-import { selectUserName, setUserLoginDetails } from '../../features/user/userSlice'
+import { selectUserName, setUserLoginDetails, setUserWatchList } from '../../features/user/userSlice'
 import { useNavigate } from 'react-router-dom'
 
 const Login = () => {
@@ -19,8 +19,25 @@ const Login = () => {
     }).catch((e)=>console.log(e.message))
   }
 
-  const setUser = (user) =>{
+  const setUser = async(user) =>{
+
+    const docRef = doc(db, "users", user.uid)
+    const docSnap = await getDoc(docRef)  
+    let userDoc = {}
+
+    if(!docSnap.exists()){
+      await setDoc(docRef, {
+        watchlist: []
+      })
+    }
+    else{
+      dispatch(setUserWatchList({
+        watchlist: docSnap?.data()?.watchlist
+      }))
+    }
+
     dispatch(setUserLoginDetails({
+      uid: user.uid,
       name: user.displayName,
       email: user.email,
       photo: 'https://img1.hotstarext.com/image/upload/w_200,h_200,c_fill/v1/feature/profile/38.png',
