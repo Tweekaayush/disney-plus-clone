@@ -1,5 +1,5 @@
 .profile-container{
-    padding: 40px 56px 0 0;
+    padding: 40px 32px 0 0;
 }
 
 .profile-wrapper{
@@ -11,6 +11,7 @@
 .profiles-header{
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .profile-item{
@@ -62,4 +63,32 @@
     flex-direction: column;
     padding: 40px 56px 0 0;
     gap: 16px;
+}
+
+@media screen and (max-width: 1000px) {
+
+    .profile-wrapper{
+        gap:24px;
+    }
+
+    .profile-img{
+        height: 80px;
+        width: 80px;
+    }
+}
+
+@media screen and (max-width: 650px) {
+
+    .profile-container-2, .profile-container{
+        padding-right: 0;
+    }
+
+    .profile-wrapper{
+        gap:16px;
+    }
+
+    .profile-img{
+        height: 60px;
+        width: 60px;
+    }
 }

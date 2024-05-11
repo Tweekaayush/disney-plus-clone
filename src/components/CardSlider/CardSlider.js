@@ -6,24 +6,29 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { useNavigate } from 'react-router-dom';
-import { getShows, getShowsByGenre } from '../../config/module';
-import { useDispatch, useSelector } from 'react-redux';
-import { selectMovieAll } from '../../features/movie/movieSlice';
-import { selectShowAll } from '../../features/shows/showSlice';
 
 const CardSlider = ({heading, shows, category, contentType}) => {
 
     const navigate = useNavigate()
-    const allMovies = useSelector(selectMovieAll)
-    const allShows = useSelector(selectShowAll)
-    const dispatch = useDispatch()
 
     const settings = {
         infinite: false,
         speed: 500,
         slidesToShow: 7,
         slidesToScroll: 7,
-        arrows: false
+        arrows: false,
+        responsive: [
+            {
+                breakpoint: 768,
+                settings: {
+                    infinite: false,
+                    speed: 500,
+                    slidesToShow: 5,
+                    slidesToScroll: 5,
+                    arrows: false,
+                }
+            }
+        ]
     };  
     const handleClick = () =>{
         navigate(`/browse/category/${category}/${contentType}`)

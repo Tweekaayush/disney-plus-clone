@@ -15,7 +15,19 @@ const CardSlider2 = ({heading, list}) => {
         speed: 500,
         slidesToShow: 5,
         slidesToScroll: 5,
-        arrows: false
+        arrows: false,
+        responsive: [
+            {
+                breakpoint: 1000,
+                settings: {
+                    infinite: false,
+                    speed: 500,
+                    slidesToShow: 4,
+                    slidesToScroll: 4,
+                    arrows: false,
+                }
+            }
+        ]
     };  
   const ref = useRef(null)
 

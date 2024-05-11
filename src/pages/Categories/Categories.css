@@ -22,3 +22,9 @@
         grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 }
+
+@media screen and (max-width:650px) {
+    .viewer-card-list{
+        padding-right: 0;
+    }
+}

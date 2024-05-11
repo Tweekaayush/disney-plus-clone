@@ -18,3 +18,20 @@
     gap: 8px;
     padding: 64px 32px 64px 0;
 }
+
+
+
+@media screen and (max-width:768px) {
+    .show-wrapper{
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+    }
+    .show-wrapper-2{
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+}
+
+@media screen and (max-width:650px) {
+    .show-wrapper, .show-wrapper-2{
+        padding: 0;
+    }
+}

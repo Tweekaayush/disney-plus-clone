@@ -1,0 +1,17 @@
+.not-found-container > span{
+    display: flex;
+    background-color: var(--bg-color-3);
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: var(--font-sz-4);
+    padding: 8px 16px;
+    gap: 8px;
+    color: var(--text-color-3);
+    font-size: var(--font-sz-1);
+}
+
+.not-found-container span svg{
+    font-size: var(--font-sz-3);
+}

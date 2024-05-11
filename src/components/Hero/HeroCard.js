@@ -117,7 +117,7 @@ const HeroCard = ({id, releaseYear, duration, languages, description, genres, ti
                         </span>
                     </li>
                 </ul>
-                <p className="hero-description body-text-3">
+                <p className="hero-description">
                     {description}
                 </p>
                 <ul className="hero-genre-list">

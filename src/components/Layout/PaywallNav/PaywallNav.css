@@ -77,3 +77,9 @@
 .select-list-active .select-list div{
     padding: 12px 64px;
 }
+
+@media screen and (max-width: 650px) {
+    .paywall-nav{
+        padding: 0 16px;
+    }
+}

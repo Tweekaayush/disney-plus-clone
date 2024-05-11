@@ -30,3 +30,9 @@
 .svg-active{
     color: var(--text-color-1);
 }
+
+@media screen and (max-width: 650px) {
+    .search-box-container{
+        margin: 100px 0 0 0;
+    }
+}

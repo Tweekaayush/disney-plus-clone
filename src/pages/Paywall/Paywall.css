@@ -66,6 +66,7 @@
     color: var(--text-color-1);
     font-size: var(--font-sz-8);
 }
+
 .paywall-content-left p{
     padding-top: 16px;
     color: var(--text-color-6);
@@ -78,7 +79,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 0 64px;
+    padding: 0 40px;
     gap: 12px;
     height: inherit;
 }
@@ -210,6 +211,7 @@
 
 .btn-price sup{
     font-size: var(--font-sz-2);
+    color: var(--text-color-5);
 }
 
 .btn-price span{
@@ -220,6 +222,7 @@
 .btn-price span:last-child{
     font-size: var(--font-sz-3);
     font-weight: 200;
+    color: var(--text-color-5);
 }
 
 .plans-btns button:disabled{
@@ -264,7 +267,94 @@
     .paywall-content-left, .paywall-content-right{
         width: 100%;
     }
+    .paywall-left-heading{
+        padding: 16px 40px;
+    }
+
+    .paywall-content-left h1{
+        font-size: var(--font-sz-7);
+    }
+
+    .paywall-content-left p{
+        font-size: var(--font-sz-2);
+    }
+
     .paywall-loop-img{
         animation-duration: 20s;
     }
+
+    .table-head{
+        font-size: var(--font-sz-2);
+    }
+
+    .table-heading{
+        font-size: var(--font-sz-2);
+    }
+
+    .table-sub-heading{
+        font-size: var(--font-sz-1);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .table-data svg{
+        font-size: var(--font-sz-4);
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .paywall-left-heading, .paywall-content-right{
+        padding: 0 16px;
+    }
+
+    .paywall-content-left h1{
+        font-size: var(--font-sz-5);
+    }
+
+    .paywall-content-left p{
+        font-size: var(--font-sz-1);
+    }
+    .table-text{
+        font-size: var(--font-sz-1);
+    }
+
+    .periodic-btns button{
+        font-size: var(--font-sz-2);
+    }
+    
+    .btn-head{
+        font-size: var(--font-sz-2);
+    }
+
+    .btn-price sup{
+        font-size: var(--font-sz-1);
+    }
+    
+    .btn-price span{
+        font-size: var(--font-sz-4);
+    }
+    
+    .btn-price span:last-child{
+        font-size: var(--font-sz-1);
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .table-col:first-child{
+        flex: 4;
+    }
+    
+    .table-head{
+        font-size: var(--font-sz-1);
+    }
+
+    .table-heading{
+        font-size: var(--font-sz-1);
+    }
+
+    .table-sub-heading{
+        font-size: var(--font-sz-0);
+    }
+
+
 }

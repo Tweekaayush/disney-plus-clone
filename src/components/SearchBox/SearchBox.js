@@ -5,9 +5,8 @@ import { useSelector } from 'react-redux';
 import { selectMovieAll } from '../../features/movie/movieSlice';
 import { selectShowAll } from '../../features/shows/showSlice';
 
-const SearchBox = ({setSearchResults}) => {
+const SearchBox = ({setSearchResults, search, setSearch}) => {
 
-  const [search, setSearch] = useState('')
   const [cls, setCls] = useState('')
   const ref = useRef(null)
   const all1 = useSelector(selectMovieAll)

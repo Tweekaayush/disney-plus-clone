@@ -6,11 +6,12 @@ import { useDispatch, useSelector } from 'react-redux'
 import { selectShowTrending } from '../../features/shows/showSlice'
 import { getMovies, getShows } from '../../config/module'
 import SearchResults from '../../components/SearchResults/SearchResults'
+import './Explore.css'
 
 const Explore = () => {
   const [searchResults, setSearchResults] = useState([])
+  const [search, setSearch] = useState('')
   const dispatch = useDispatch()
-
   const trending1 = useSelector(selectMovieTrending)
   const trending2 = useSelector(selectShowTrending)
 
@@ -24,9 +25,9 @@ const Explore = () => {
   }, [])
   return (
     <div className="container container-3">
-        <SearchBox setSearchResults={setSearchResults} />
+        <SearchBox setSearchResults={setSearchResults} setSearch={setSearch} search={search} />
         {
-          searchResults.length?(    
+          search || searchResults.length?(    
             <SearchResults searchResults={searchResults}/>
           ):(
             <Trending shows={[...trending1, ...trending2]}/>    

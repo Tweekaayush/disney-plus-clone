@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './Sidebar.css'
 import { useLocation, useNavigate } from 'react-router-dom';
 import { navlist } from './navitemlist';
@@ -13,15 +13,37 @@ const Sidebar = () => {
   const navigate = useNavigate()
   const userName = useSelector(selectUserName)
   const userPhoto = useSelector(selectUserPhoto)
+  const [toggle, setToggle] = useState(false)
   const [cls, setCls] = useState('')
 
    const handleClick = (loc) =>{
+    setToggle(false)
     navigate(loc)
    }
 
    const handleSubscribe = () =>{
     navigate('/paywall')
    }
+
+   const handleResize = () =>{
+    let resizeTimer
+    if(document.body.clientWidth>650)
+    setToggle(false)
+       document.body.classList.add("resize-animation-stopper");
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+      document.body.classList.remove("resize-animation-stopper");
+    }, 400);
+  }
+
+   useEffect(()=>{
+    window.addEventListener("resize", handleResize)
+    
+    return ()=>{
+      window.removeEventListener("resize", handleResize)
+    }
+
+  }, [])
 
   return (
     <nav className='navbar'>
@@ -35,7 +57,7 @@ const Sidebar = () => {
                 <FaAngleRight/>
             </button>
         </div>
-        <div className='navbar-items-container' onMouseOver={()=>setCls('navbar-overlay-active')} onMouseOut={()=>setCls('')}>
+        <div className={toggle?`navbar-items-container navbar-items-container-active`:`navbar-items-container`} onMouseOver={()=>setCls('navbar-overlay-active')} onMouseOut={()=>setCls('')}>
             <ul className="nav-items-list link-desc">
                 <li className={'myspace' === pathname? 'nav-item nav-item-active': 'nav-item'} onClick={()=>handleClick('myspace')}>
                     <span>
@@ -64,6 +86,11 @@ const Sidebar = () => {
                             </li>   
                 })}
             </ul>
+        </div>
+        <div className={toggle?`nav-toggler nav-toggle-active`:`nav-toggler`} onClick={()=>setToggle(!toggle)}>
+            <div className="line-1"></div>
+            <div className="line-2"></div>
+            <div className="line-3"></div>
         </div>
     </nav>
   )

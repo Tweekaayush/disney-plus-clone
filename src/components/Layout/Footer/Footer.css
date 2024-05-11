@@ -82,10 +82,35 @@ footer{
 
     .lower-footer-left{
         order: 1;
+        padding-top: 16px;
     }
 
     .footer-list{
         flex-direction: row;
     }
 
+}
+
+@media screen and (max-width: 650px) {
+    
+    .footer-container{
+        margin: 64px 16px 16px 16px;
+    }
+    .lower-footer{
+        flex-direction: row;
+    }
+    .lower-footer-left{
+        order: 0;
+        padding-top: 0;
+    }
+}
+
+@media screen and (max-width:550px) {
+    .lower-footer{
+        flex-direction: column;
+    }
+    .lower-footer-left{
+        order: 1;
+        padding-top: 16px;
+    }
 }

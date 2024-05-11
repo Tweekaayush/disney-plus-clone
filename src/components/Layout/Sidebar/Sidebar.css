@@ -10,6 +10,7 @@
     z-index: 999;
 }
 
+
 .sidebar-disable{
     display: none;
 }
@@ -51,12 +52,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: var(--font-sz-0);
 }
 
 .navbar-items-container{
     position: relative;
     width: 100%;
     margin: auto;
+    transition: all 0.3s;
 }
 
 .nav-items-list{
@@ -112,4 +115,125 @@
     width: 24px;
     height: 24px;
     border-radius: 50%;
+}
+
+.nav-toggler{
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 5px;   
+    padding: 15px 10px;
+    border-radius: 50%;
+    transition: all 0.3s;
+}
+
+.nav-toggler:hover{
+    background-color: var(--overlay-color-3);
+
+}
+
+.nav-toggler > div{
+    height: 3px;
+    background-color: var(--text-color-1);
+    transition: all 0.3s;
+    box-shadow: 1px 1px 5px black;
+    border-radius: 5px;
+}
+
+.line-1{
+    width: 30px;
+}
+
+.line-2{
+    width: 20px;
+}
+
+.line-3{
+    width: 30px;
+}
+
+.nav-toggle-active .line-1{
+    transform: rotate(45deg) translate(3px,8px);
+}
+.nav-toggle-active .line-2{
+    opacity: 0;
+}
+.nav-toggle-active .line-3{
+    transform: rotate(-45deg) translate(4px, -8px);
+}
+
+
+@media screen and (max-width: 650px){
+    .navbar{
+        width: 100%;
+        height: 80px;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 0 16px;
+        /* background-color: var(--overlay-color); */
+        z-index: 999;
+    }
+
+    .nav-brand{
+        position: relative;
+        padding: 0;
+        gap: 5px;
+    }
+
+    .nav-brand img{
+        height: 36px;
+    }
+
+    .nav-brand button{
+        font-size: 10px;
+        padding: 4px;
+    }
+
+    .navbar-overlay{
+        display: none;
+    }
+
+    .navbar-items-container{
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        background-image: linear-gradient(to bottom, var(--overlay-color) 90%, var(--overlay-color-2) 100%);
+        transform: translateY(-100%);
+        z-index: -1;
+        visibility: hidden;
+        opacity: 0;
+        transition: all 0.5s;
+        padding-block: 100px;
+    }
+
+    .nav-item span:nth-child(2){
+        position: relative;
+        text-wrap: nowrap;
+        transition: inherit;
+        width: 100%;
+        padding: 0;
+        transform: translateX(0);
+        opacity: 1;
+        visibility: visible;
+        margin: 0;
+    }
+
+    .nav-toggler{
+        display: flex;
+    }
+
+    .navbar-items-container-active{
+        transform: translateY(0);
+        visibility: visible;
+        opacity: 1;
+    }
+
+}
+
+
+@media screen and (max-width: 550px) {
+    
 }
