@@ -15,7 +15,7 @@ const Browse = () => {
   const title = useSelector(selectGenreShowTitle)
   const allMovies = useSelector(selectMovieAll)
   const allShows = useSelector(selectShowAll)
-  
+
   useEffect(()=>{
     getMovies(dispatch)
     getShows(dispatch)
@@ -28,7 +28,7 @@ const Browse = () => {
     else if(type === 'shows')
       getShowsByGenre(allShows, category, dispatch, type)
     else
-      getShowsByGenre(allMovies, category, dispatch)
+      getShowsByGenre([...allMovies, ...allShows], category, dispatch)
   }, [allMovies, allShows, category, dispatch, type])
 
   return (

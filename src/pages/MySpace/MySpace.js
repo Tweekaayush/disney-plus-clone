@@ -6,6 +6,7 @@ import { selectUserName, selectWatchList } from '../../features/user/userSlice'
 import { FaAngleRight } from "react-icons/fa";
 import { useNavigate } from 'react-router-dom'
 import CardSlider from '../../components/CardSlider/CardSlider'
+import { IoSettingsOutline } from "react-icons/io5";
 
 
 const MySpace = () => {
@@ -13,8 +14,6 @@ const MySpace = () => {
   const userName = useSelector(selectUserName)
   const navigate = useNavigate()
   const watchList = useSelector(selectWatchList)
-
-  console.log(watchList)
 
   useEffect(()=>{
     window.scrollTo(0, 0)
@@ -38,7 +37,12 @@ const MySpace = () => {
             </div>
             <div className="my-space-header-right">
                 <button className='button-1' onClick={()=>navigate('/paywall')}>Subscribe</button>
-                <button className='button-2'>Help & Settings</button>
+                <button className='button-2'>
+                  <IoSettingsOutline/>
+                  <span>
+                    Help & Settings
+                  </span>
+                </button>
             </div>
           </div>
           ):(

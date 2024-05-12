@@ -114,7 +114,6 @@ export const getShows = async (dispatch) =>{
       else  
         temp.set(g, 1)
     })
-    
   })
 
   dispatch(setShows({
@@ -172,12 +171,12 @@ export const getAllCategories = (category1, category2, dispatch) =>{
   let newArr = []
 
   for(let x of category1.entries()){
-    let key = x[0]
+    let key = x[0].toLowerCase()
     let value = x[1]
     if(temp.has(key))
       temp.set(key, temp.get(key) + 1)
     else  
-    temp.set(key, value)
+      temp.set(key, value)
   }
 
   for(let x of category2.entries()){
@@ -248,8 +247,9 @@ export const getShowsByGenre = (shows, genre, dispatch, title='') =>{
   if(genreList.length === 0){
     shows.forEach((show)=>{
       show.genres.forEach((genreName)=>{
-        if(genreName === genre)
+        if(genreName === genre){
           genreList = [...genreList, show]
+        }
       })
     })
   }

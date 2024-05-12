@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 import { selectUserName } from '../../../features/user/userSlice';
 import './PaywallNav.css'
 import { useNavigate } from 'react-router-dom'
+import { FaAngleDown } from "react-icons/fa6";
 
 const PaywallNav = () => {
 
@@ -48,7 +49,12 @@ const PaywallNav = () => {
         </div>
         <div className="paywall-nav-right">
           <div className={`select-menu ${cls}`}>
-            <div className="select-display" onClick={setList}>{language}</div>
+            <div className="select-display" onClick={setList}>
+              <span>
+                {language}
+              </span>
+              <FaAngleDown/>
+              </div>
             <div className='select-list'>
               <div className="select-option" onClick={changeLanguage}>english</div>
               <div className="select-option" onClick={changeLanguage}>hindi</div>

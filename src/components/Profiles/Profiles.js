@@ -23,6 +23,7 @@ const Profiles = () => {
   }
   const handleLogin = () =>{
     document.getElementById('loginPg').classList.add('login-pg-active')
+    document.querySelector('body').classList.add('hidden')
   }
     
   return (

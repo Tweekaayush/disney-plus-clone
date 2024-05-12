@@ -17,8 +17,6 @@ const BrowseEditorial = () => {
   const category2 = useSelector(selectAllShowCategories)
   const userName = useSelector(selectUserName)
 
-  console.log(type.split('-'))
-
   useEffect(()=>{
 
     getMovies(dispatch)

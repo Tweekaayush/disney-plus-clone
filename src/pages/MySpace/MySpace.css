@@ -39,6 +39,17 @@
     gap: 16px;
 }
 
+.my-space-header-right button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.my-space-header-right button svg{
+    font-size: var(--font-sz-4);
+}
+
 @media screen and (max-width:650px) {
 
     .my-space-header-2{

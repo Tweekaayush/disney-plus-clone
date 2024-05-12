@@ -13,7 +13,7 @@
   /* colors */
   
   --bg-color-1: rgb(15, 16, 20);
-  --bg-color-2: rgba(255, 204, 117, 0.1);
+  --bg-color-2: rgb(58, 51, 39);
   --bg-color-3: rgb(37, 40, 51);
   --bg-color-4: rgb(22, 24, 31);
   --bg-color-5: rgb(9, 22, 48);
@@ -24,13 +24,14 @@
   --overlay-color-3: rgba(0, 0, 0, 0.5);
   --overlay-color-4: rgb(15, 16, 20, 0.5);
   --overlay-color-5: rgb(15, 16, 20, 0.7);
-/* 
+  /* 
   --button-color-1: */
   --button-color-1: rgb(52, 113, 245);
   --button-color-2: rgb(8, 65, 189);
   --button-color-3: rgba(88, 89, 91, 0.5);
   --button-color-4: rgba(255, 255, 255, 0.3);
   --button-color-5: rgba(255, 255, 255, 0.35);
+  --button-color-6: rgb(88, 89, 91);
 
   --text-color-1: rgb(255, 255, 255);
   --text-color-2: rgb(143, 152, 178);

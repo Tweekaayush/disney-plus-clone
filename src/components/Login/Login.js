@@ -23,7 +23,6 @@ const Login = () => {
 
     const docRef = doc(db, "users", user.uid)
     const docSnap = await getDoc(docRef)  
-    let userDoc = {}
 
     if(!docSnap.exists()){
       await setDoc(docRef, {
@@ -47,6 +46,7 @@ const Login = () => {
   const handleClickOutside = (e) =>{
     if(ref.current && !ref.current.contains(e.target)){
       document.getElementById('loginPg').classList.remove('login-pg-active')
+      document.querySelector('body').classList.remove('hidden')
     }
   }
 
@@ -73,7 +73,7 @@ const Login = () => {
     <div className="login-container" id='loginPg'>
       <div className="login-wrapper" ref={ref}>
         <div className="login-heading">
-          <h2 className='heading-text-3'>Login or sign up to continue</h2>
+          <h2 className='heading-text-1'>Login or sign up to continue</h2>
           <p className='body-text-1'>Enter your phone number or login with your google account</p>
         </div>
         <div className="login-content">
@@ -87,7 +87,7 @@ const Login = () => {
           </form>
           <div className="separator"></div>
           <button onClick={handleAuth} style={{cursor: 'pointer'}}>
-            <img className="google-img" src={logo}></img>
+            <img className="google-img" src={logo} alt='google'></img>
             <span>Continue with Google</span>
           </button>
         </div>
